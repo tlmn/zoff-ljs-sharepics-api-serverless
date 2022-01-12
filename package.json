@@ -1,0 +1,26 @@
+{
+  "name": "zoff-ljs-sharepics-api-serverless",
+  "version": "1.0.0",
+  "description": "A serverless function to screenshot Linksjugend ['solid] social media sharepics.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tlmn/zoff-ljs-sharepics-api-serverless.git"
+  },
+  "author": "tlmn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tlmn/zoff-ljs-sharepics-api-serverless/issues"
+  },
+  "homepage": "https://github.com/tlmn/zoff-ljs-sharepics-api-serverless#readme",
+  "devDependencies": {
+    "prettier": "2.5.1"
+  },
+  "dependencies": {
+    "puppeteer": "^13.0.1",
+    "serialize-error": "^9.0.0"
+  }
+}
