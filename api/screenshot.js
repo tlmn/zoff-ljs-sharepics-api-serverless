@@ -1,5 +1,4 @@
-import { serializeError } from 'serialize-error';
-import * as puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer';
 
 async function getBrowserInstance() {
   return puppeteer.launch({
@@ -53,7 +52,8 @@ export default async function handler(req, res) {
       );
     }
   } catch (error) {
-    res.status(500).send(JSON.stringify(serializeError(error)));
+    console.log(error);
+    res.status(500).send(JSON.stringify(error));
   }
 
   return {};
