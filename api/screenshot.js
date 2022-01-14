@@ -39,13 +39,11 @@ export default async function handler(req, res) {
 
   try {
     const screenshot = await takeScreenshot(SVGContent);
-    const maxAge = 60 * 60 * 24;
 
     if (!screenshot) {
       throw new Error('Screenshot could not be generated.');
     }
 
-    res.setHeader('Cache-Control', `max-age=${maxAge}, public`);
     res.setHeader('Content-Type', 'image/png');
     res.status(200).send(screenshot);
   } catch (error) {
