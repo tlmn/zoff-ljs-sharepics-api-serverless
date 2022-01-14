@@ -1,13 +1,15 @@
-import puppeteer from 'puppeteer-core';
+import chromium from 'chrome-aws-lambda';
 
 async function getBrowserInstance() {
-  return puppeteer.launch({
-    args: ['--no-sandbox'],
+  return chromium.puppeteer.launch({
+    args: chromium.args,
     defaultViewport: {
-      width: 1200,
-      height: 600, 
-      deviceScaleFactor: 2
-    }
+      width: 1280,
+      height: 640
+    },
+    executablePath: await chromium.executablePath,
+    headless: chromium.headless,
+    ignoreHTTPSErrors: true
   });
 }
 
@@ -34,9 +36,6 @@ async function takeScreenshot(SVGContent) {
 
 export default async function handler(req, res) {
   const { body: SVGContent } = req;
-
-  console.log(req);
-
 
   try {
     const screenshot = await takeScreenshot(SVGContent);
