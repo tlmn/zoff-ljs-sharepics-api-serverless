@@ -4,8 +4,8 @@ async function getBrowserInstance() {
   return chromium.puppeteer.launch({
     args: chromium.args,
     defaultViewport: {
-      width: 1280,
-      height: 640
+      width: 1080,
+      height: 1080
     },
     executablePath: await chromium.executablePath,
     headless: chromium.headless,
